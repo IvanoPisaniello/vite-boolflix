@@ -2,6 +2,8 @@
 import Card from "./Card.vue";
 import axios from "axios";
 import { store } from "../store";
+import { findFlagUrlByIso2Code } from "country-flags-svg";
+
 export default {
     components: {
         Card,
@@ -12,6 +14,7 @@ export default {
             store,
             movies: [],
             searchMovies: "",
+
         }
     },
 
@@ -48,7 +51,7 @@ export default {
                 <li class="list-unstyled">
                     <p class="d-block">{{ movie.original_title }} </p>
                     <p class="d-block">{{ movie.original_name }}</p>
-                    <p class="d-block"> Lingua Originale: {{ movie.original_language }}</p>
+                    <p class="d-block"> Lingua Originale: {{ movie.original_language }} </p>
                     <p>Voto: {{ movie.vote_average }}</p>
                 </li>
             </ul>
@@ -56,4 +59,8 @@ export default {
     </ul>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.img-flag {
+    height: 20px;
+}
+</style>
