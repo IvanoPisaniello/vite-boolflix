@@ -22,20 +22,10 @@ export default {
 
     },
     watch: {
-        // filterMovies() {
-        //     const url = `https://api.themoviedb.org/3/search/movie?api_key=b54d72c5e7b0cdfd35ea60e05ff5547b&query=${store.searchMovies}&language=it-IT`
 
-        //     axios.get(url).then((response) => {
-
-        //         this.movies = response.data.results;
-        //         console.log(this.movies);
-
-        //     })
-
-        // }
         "store.searchMovies": function (searchMovies) {
             this.movies = [];
-            const url = `https://api.themoviedb.org/3/search/movie?api_key=b54d72c5e7b0cdfd35ea60e05ff5547b&query=${store.searchMovies}&language=it-IT`
+            const url = `https://api.themoviedb.org/3/search/multi?api_key=b54d72c5e7b0cdfd35ea60e05ff5547b&query=${store.searchMovies}&language=it-IT`
 
             axios.get(url).then((response) => {
 
@@ -52,11 +42,12 @@ export default {
 <template>
     <Card></Card>
     <ul>
-        <li class="list-unstyled" v-for="movie in movies">
-            {{ movie.title }}:
+        <li class="list-unstyled" v-for="movie in   movies  ">
+            {{ movie.title }}
             <ul>
                 <li class="list-unstyled">
-                    <p class="d-block">Titolo Originale:{{ movie.original_title }} </p>
+                    <p class="d-block">{{ movie.original_title }} </p>
+                    <p class="d-block">{{ movie.original_name }}</p>
                     <p class="d-block"> Lingua Originale: {{ movie.original_language }}</p>
                     <p>Voto: {{ movie.vote_average }}</p>
                 </li>
