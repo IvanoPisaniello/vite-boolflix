@@ -11,6 +11,7 @@ export default {
         return {
             store,
             movies: [],
+            searchMovies: "",
         }
     },
 

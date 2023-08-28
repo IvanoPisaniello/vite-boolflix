@@ -6,13 +6,20 @@ export default {
         return {
             filteredMovies: [],
             store,
+            searchMovies: "",
+            store,
 
         }
 
 
     },
     methods: {
+        onEnter() {
 
+            store.searchMovies = this.searchMovies
+            console.log("funziona")
+            this.searchMovies = "";
+        }
 
 
 
@@ -32,7 +39,7 @@ export default {
                 <div class="input-group input-group-sm mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Search Movies</span>
                     <input type="text" class="form-control" aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-sm" v-model="store.searchMovies" @keyup.enter="onEnter">
+                        aria-describedby="inputGroup-sizing-sm" v-model="searchMovies" @keyup.enter="onEnter()">
                 </div>
             </div>
         </div>
