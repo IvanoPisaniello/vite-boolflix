@@ -52,8 +52,15 @@ export default {
 <template>
     <Card></Card>
     <ul>
-        <li v-for="movie in movies">
-            {{ movie.title }}
+        <li class="list-unstyled" v-for="movie in movies">
+            {{ movie.title }}:
+            <ul>
+                <li class="list-unstyled">
+                    <p class="d-block">Titolo Originale:{{ movie.original_title }} </p>
+                    <p class="d-block"> Lingua Originale: {{ movie.original_language }}</p>
+                    <p>Voto: {{ movie.vote_average }}</p>
+                </li>
+            </ul>
         </li>
     </ul>
 </template>
