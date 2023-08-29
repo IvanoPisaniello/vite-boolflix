@@ -2,7 +2,6 @@
 import Card from "./Card.vue";
 import axios from "axios";
 import { store } from "../store";
-import { findFlagUrlByIso2Code } from "country-flags-svg";
 import LangFlag from 'vue-lang-code-flags'
 
 export default {
@@ -16,12 +15,18 @@ export default {
             store,
             movies: [],
             searchMovies: "",
+            urlImg: "",
 
         }
     },
 
     methods: {
-
+        getUrlImg(posterPath) {
+            return `https://image.tmdb.org/t/p/w92${posterPath}`;
+        },
+        getVote(originalVote) {
+            return Math.round(originalVote / 2);
+        }
     },
     mounted() {
 
@@ -58,7 +63,11 @@ export default {
                     <p class="d-block">{{ movie.original_title }} </p>
                     <p class="d-block">{{ movie.original_name }}</p>
                     <lang-flag :iso="movie.original_language" />
-                    <p>Voto: {{ movie.vote_average }}</p>
+                    <p>Voto: {{ getVote(movie.vote_average) }}</p>
+
+                    <img :src="getUrlImg(movie.poster_path)" alt="">
+
+
                 </li>
             </ul>
         </li>
@@ -68,5 +77,6 @@ export default {
 <style lang="scss" scoped>
 .img-flag {
     height: 20px;
+
 }
 </style>
