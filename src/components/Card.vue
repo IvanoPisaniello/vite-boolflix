@@ -1,6 +1,10 @@
 <script>
-
+import LangFlag from 'vue-lang-code-flags';
 export default {
+    compontents: {
+        LangFlag,
+    },
+
     props: {
         movie: Object,
         required: true,
@@ -17,7 +21,7 @@ export default {
 
     methods: {
         getUrlImg(posterPath) {
-            return `https://image.tmdb.org/t/p/w200${posterPath}`;
+            return `https://image.tmdb.org/t/p/w342${posterPath}`;
         },
         getVote(originalVote) {
             return Math.round(originalVote / 2);
@@ -30,25 +34,69 @@ export default {
 
 
 <template>
-    <div class="">
+    <div class="card-intera">
 
         <div class="my-card">
             <img :src="getUrlImg(movie.poster_path)" alt="">
-            <!-- <h5 class="card-title">{{ movie.original_title }}</h5>
-            <h5 class="card-title">{{ movie.original_name }}</h5>
-            <p class="card-text">{{ movie.overview }}</p>
-            <div v-for="star in 5" class="d-flex">
-                <i v-if="star <= getVote(movie.vote_average)" class="fa-solid fa-star"></i>
-                <i v-else class="fa-regular fa-star"></i>
-            </div> -->
+            <div class="info-container">
+                <h5 class="card-title">Titolo: {{ movie.original_title }}</h5>
+                <h5 class="card-title">{{ movie.original_name }}</h5>
+                <lang-flag :iso="movie.original_language" class="flag" />
+                <div v-for="star in 5" class="d-inline-flex">
+                    <i v-if="star <= getVote(movie.vote_average)" class="fa-solid fa-star"></i>
+                    <i v-else class="fa-regular fa-star"></i>
+                </div>
+                <p class="card-text">{{ movie.overview }}</p>
 
+
+            </div>
         </div>
     </div>
 </template>
 
 
 <style lang="scss" scoped>
-.my-card {
-    display: flex;
+.card-intera {
+    position: relative;
+
+
+    .my-card {
+        display: inline-flex;
+
+    }
+
+    .info-container {
+        padding: 1rem;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        display: none;
+        background-color: rgba(0, 0, 0, 0.555);
+        color: white;
+        width: 342px;
+
+        h5 {
+            font-size: 1rem;
+
+        }
+
+        p {
+            font-size: .6rem;
+        }
+
+        i {
+            color: goldenrod;
+        }
+
+
+    }
+
+
+}
+
+
+.card-intera:hover .info-container {
+    display: block;
 }
 </style>

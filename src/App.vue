@@ -25,7 +25,11 @@ export default {
 
 <style lang="scss">
 .main-section {
+  margin-top: 100px;
 
+}
+
+body {
   background-color: #1B1B1B;
 }
 </style>
