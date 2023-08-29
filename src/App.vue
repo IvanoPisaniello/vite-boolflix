@@ -18,9 +18,14 @@ export default {
   <header>
     <TheHeader></TheHeader>
   </header>
-  <main>
+  <main class="main-section">
     <TheMain></TheMain>
   </main>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+.main-section {
+
+  background-color: #1B1B1B;
+}
+</style>

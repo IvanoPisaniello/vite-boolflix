@@ -55,8 +55,15 @@ export default {
 
 
 <template>
-    <Card></Card>
-    <ul>
+    <div class="container ">
+        <div class="row card-container flex-wrap gap-3 justify-content-center">
+            <div class="col-2 p-0 m-0  " v-for="movie in movies">
+                <Card :key="movie.id" :overview="movie.overview" :vote="movie.vote_average" :movie="movie"
+                    :name="movie.original_name" :title="movie.title" :src="movie.src" />
+            </div>
+        </div>
+    </div>
+    <!-- <ul>
         <li class="list-unstyled" v-for="movie in   movies  ">
             {{ movie.title }}
             <ul>
@@ -75,7 +82,7 @@ export default {
                 </li>
             </ul>
         </li>
-    </ul>
+    </ul> -->
 </template>
 
 <style lang="scss" scoped>
@@ -83,6 +90,7 @@ export default {
     height: 20px;
 
 }
+
 
 .fa-star {}
 </style>

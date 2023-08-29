@@ -1,8 +1,12 @@
 <script>
+
 export default {
     props: {
-        movies: Object,
+        movie: Object,
         required: true,
+
+
+
     },
     data() {
         return {
@@ -12,8 +16,13 @@ export default {
 
 
     methods: {
-
-    }
+        getUrlImg(posterPath) {
+            return `https://image.tmdb.org/t/p/w200${posterPath}`;
+        },
+        getVote(originalVote) {
+            return Math.round(originalVote / 2);
+        }
+    },
 
 }
 
@@ -21,16 +30,25 @@ export default {
 
 
 <template>
-    <div class="card" style="width: 18rem;" v-for="movie in  movies">
+    <div class="">
 
-        <div class="card-body">
-            <h5 class="card-title">{{ movie.original_title }}</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="my-card">
+            <img :src="getUrlImg(movie.poster_path)" alt="">
+            <!-- <h5 class="card-title">{{ movie.original_title }}</h5>
+            <h5 class="card-title">{{ movie.original_name }}</h5>
+            <p class="card-text">{{ movie.overview }}</p>
+            <div v-for="star in 5" class="d-flex">
+                <i v-if="star <= getVote(movie.vote_average)" class="fa-solid fa-star"></i>
+                <i v-else class="fa-regular fa-star"></i>
+            </div> -->
+
         </div>
     </div>
 </template>
 
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.my-card {
+    display: flex;
+}
+</style>
