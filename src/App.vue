@@ -30,6 +30,7 @@ export default {
 }
 
 body {
-  background-color: #1B1B1B;
+  background-image: url(../src/assets/wallpaper.jpeg);
+
 }
 </style>
