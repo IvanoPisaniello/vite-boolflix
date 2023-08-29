@@ -3,10 +3,12 @@ import Card from "./Card.vue";
 import axios from "axios";
 import { store } from "../store";
 import { findFlagUrlByIso2Code } from "country-flags-svg";
+import LangFlag from 'vue-lang-code-flags'
 
 export default {
     components: {
         Card,
+        LangFlag,
     },
 
     data() {
@@ -24,6 +26,8 @@ export default {
     mounted() {
 
     },
+
+
     watch: {
 
         "store.searchMovies": function (searchMovies) {
@@ -34,6 +38,8 @@ export default {
 
                 this.movies = response.data.results;
                 console.log(this.movies);
+
+
             })
         }
     }
@@ -51,7 +57,7 @@ export default {
                 <li class="list-unstyled">
                     <p class="d-block">{{ movie.original_title }} </p>
                     <p class="d-block">{{ movie.original_name }}</p>
-                    <p class="d-block"> Lingua Originale: {{ movie.original_language }} </p>
+                    <lang-flag :iso="movie.original_language" />
                     <p>Voto: {{ movie.vote_average }}</p>
                 </li>
             </ul>
