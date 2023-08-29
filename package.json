@@ -9,11 +9,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-brands-svg-icons": "^6.4.2",
+    "@fortawesome/free-regular-svg-icons": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/vue-fontawesome": "^3.0.3",
     "@growthbunker/vueflags": "^0.1.14",
     "axios": "^1.5.0",
     "bootstrap": "^5.3.1",
     "country-flag-icons": "^1.5.7",
     "country-flags-svg": "^2.0.0-beta.1",
+    "fontawesome": "^5.6.3",
+    "fortawesome": "^0.0.1-security",
     "vue": "^3.3.4",
     "vue-lang-code-flags": "^1.0.13"
   },

@@ -17,6 +17,7 @@ export default {
             searchMovies: "",
             urlImg: "",
 
+
         }
     },
 
@@ -64,8 +65,11 @@ export default {
                     <p class="d-block">{{ movie.original_name }}</p>
                     <lang-flag :iso="movie.original_language" />
                     <p>Voto: {{ getVote(movie.vote_average) }}</p>
-
                     <img :src="getUrlImg(movie.poster_path)" alt="">
+                    <div v-for="star in 5" class="d-flex">
+                        <i v-if="star <= getVote(movie.vote_average)" class="fa-solid fa-star"></i>
+                        <i v-else class="fa-regular fa-star"></i>
+                    </div>
 
 
                 </li>
@@ -79,4 +83,6 @@ export default {
     height: 20px;
 
 }
+
+.fa-star {}
 </style>
