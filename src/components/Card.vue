@@ -39,6 +39,7 @@ export default {
         <div class="my-card">
             <img :src="getUrlImg(movie.poster_path)" alt="">
             <div class="info-container">
+                <h5 class="card-title">Titolo Originale: {{ movie.title }}</h5>
                 <h5 class="card-title">Titolo: {{ movie.original_title }}</h5>
                 <h5 class="card-title">{{ movie.original_name }}</h5>
                 <lang-flag :iso="movie.original_language" class="flag" />

@@ -35,7 +35,7 @@ export default {
     <div class="bg-danger">
         <div class="container">
             <div class="nav d-flex justify-content-between">
-                <h1>Boolflix</h1>
+                <img src="../assets/Netflix-logo.wine.svg" class="logo-img" alt="">
                 <div class="input-group input-group-sm mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Search Movies</span>
                     <input type="text" class="form-control" aria-label="Sizing example input"
@@ -57,5 +57,11 @@ export default {
 .input-group {
     height: 50px;
     width: 300px;
+}
+
+.logo-img {
+    height: 50px;
+    width: 300px;
+    filter: grayscale(1);
 }
 </style>
