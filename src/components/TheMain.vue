@@ -2,12 +2,12 @@
 import Card from "./Card.vue";
 import axios from "axios";
 import { store } from "../store";
-import LangFlag from 'vue-lang-code-flags'
+// import LangFlag from 'vue-lang-code-flags'
 
 export default {
     components: {
         Card,
-        LangFlag,
+        // LangFlag,
     },
 
     data() {

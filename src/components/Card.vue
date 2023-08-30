@@ -1,7 +1,7 @@
 <script>
 import LangFlag from 'vue-lang-code-flags';
 export default {
-    compontents: {
+    components: {
         LangFlag,
     },
 
@@ -43,12 +43,13 @@ export default {
                     movie.title }}</h5>
                 <h5 class="card-title" v-if="movie.original_title">Titolo: {{ movie.original_title }}</h5>
                 <h5 class="card-title" v-if="movie.original_name">Serie Tv {{ movie.original_name }}</h5>
-                <lang-flag :iso="movie.original_language" class="flag" />
+
                 <div v-for="star in 5" class="d-inline-flex">
                     <i v-if="star <= getVote(movie.vote_average)" class="fa-solid fa-star"></i>
                     <i v-else class="fa-regular fa-star"></i>
                 </div>
                 <p class="card-text">{{ movie.overview }}</p>
+                <lang-flag :iso="movie.original_language" class="flag" />
 
 
             </div>
@@ -84,7 +85,7 @@ export default {
         }
 
         p {
-            font-size: .6rem;
+            font-size: .8rem;
         }
 
         i {
@@ -94,6 +95,10 @@ export default {
 
     }
 
+    .flag {
+        width: 30px;
+        height: 30px;
+    }
 
 }
 
