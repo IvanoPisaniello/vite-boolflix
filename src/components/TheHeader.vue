@@ -62,11 +62,11 @@ export default {
 
 .input-group {
     height: 50px;
-    width: 300px;
+    width: 250px;
 }
 
 .logo-img {
-    height: 50px;
+    height: 60px;
     width: 300px;
 
 }
