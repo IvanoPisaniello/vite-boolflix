@@ -68,6 +68,6 @@ export default {
 .logo-img {
     height: 50px;
     width: 300px;
-    filter: grayscale(1);
+
 }
 </style>
