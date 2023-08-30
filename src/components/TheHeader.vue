@@ -63,6 +63,7 @@ export default {
 .input-group {
     height: 50px;
     width: 250px;
+    right: 4%;
 }
 
 .logo-img {
