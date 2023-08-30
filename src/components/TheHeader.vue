@@ -38,8 +38,9 @@ export default {
                 <img src="../assets/Netflix-logo.wine.svg" class="logo-img" alt="">
                 <div class="input-group input-group-sm mb-3">
 
-                    <input type="text" class="form-control" aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-sm" v-model="searchMovies" @keyup.enter="onEnter()">
+                    <input type="text" class="form-control" aria-label="Cerca Film e Serie Tv"
+                        placeholder="Cerca Film e Serie Tv" aria-describedby="inputGroup-sizing-sm" v-model="searchMovies"
+                        @keyup.enter="onEnter()">
                 </div>
             </div>
         </div>
