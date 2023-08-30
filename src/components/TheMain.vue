@@ -56,7 +56,7 @@ export default {
 
 <template>
     <div class="p-4">
-        <div class="row card-container justify-content-center">
+        <div class="row card-container justify-content-center gap-1">
             <div class="p-0 m-0 colonna-card" v-for="movie in movies">
                 <Card :key="movie.id" :overview="movie.overview" :vote="movie.vote_average" :movie="movie"
                     :name="movie.original_name" :language="movie.original_language" :title="movie.title" :src="movie.src"
