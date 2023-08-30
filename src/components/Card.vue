@@ -21,6 +21,9 @@ export default {
 
     methods: {
         getUrlImg(posterPath) {
+            if (!this.movie.poster_path) {
+                return "https://video-smo.geodata.gov.hk/AVideo/view/img/notfound_portrait.jpg";
+            }
             return `https://image.tmdb.org/t/p/w342${posterPath}`;
         },
         getVote(originalVote) {
@@ -61,10 +64,11 @@ export default {
 <style lang="scss" scoped>
 .card-intera {
     position: relative;
-
+    height: 100%;
 
     .my-card {
         display: inline-flex;
+        height: 100%;
 
     }
 
@@ -100,6 +104,9 @@ export default {
         height: 30px;
     }
 
+    .img {
+        width: 342px;
+    }
 }
 
 
