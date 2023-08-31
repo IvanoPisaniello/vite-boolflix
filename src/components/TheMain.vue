@@ -32,8 +32,8 @@ export default {
     mounted() {
 
     },
-
-
+    // api for popular
+    // https://api.themoviedb.org/3/movie/popular?api_key=b54d72c5e7b0cdfd35ea60e05ff5547b&language=it-IT 
     watch: {
 
         "store.searchMovies": function (searchMovies) {
@@ -56,6 +56,7 @@ export default {
 
 <template>
     <div class="p-4">
+
         <div class="row card-container justify-content-center gap-1">
             <div class="p-0 m-0 colonna-card" v-for="movie in movies">
                 <Card :key="movie.id" :overview="movie.overview" :vote="movie.vote_average" :movie="movie"

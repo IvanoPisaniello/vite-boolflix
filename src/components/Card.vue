@@ -11,6 +11,7 @@ export default {
 
 
 
+
     },
     data() {
         return {
@@ -37,9 +38,11 @@ export default {
 
 
 <template>
+    <!-- <h1 v-if="!movie.original_title && !movie.poster_path && !movie.overview">Nessuna Corrispondenza Trovata</h1> -->
     <div class="card-intera">
 
         <div class="my-card">
+
             <img :src="getUrlImg(movie.poster_path)" alt="">
             <div class="info-container">
                 <h5 class="card-title" v-if="movie.title !== movie.original_title">Titolo Originale: {{
@@ -78,7 +81,7 @@ export default {
         top: 0;
         bottom: 0;
         left: 0;
-        display: none;
+        opacity: 0;
         background-color: rgba(0, 0, 0, 0.555);
         color: white;
         width: 342px;
@@ -111,6 +114,7 @@ export default {
 
 
 .card-intera:hover .info-container {
-    display: block;
+    opacity: 1;
+    transition: opacity 0.3s linear;
 }
 </style>
